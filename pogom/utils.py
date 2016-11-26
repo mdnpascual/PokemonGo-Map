@@ -198,6 +198,11 @@ def get_args():
                         help='Enable status page database update using STATUS_NAME as main worker name.')
     parser.add_argument('-spp', '--status-page-password', default=None,
                         help='Set the status page password.')
+    parser.add_argument('-sl', '--speed-limit', help='If next scan would cause the account to move above specified speed in kmph in a straight line, sleep until such time that it could reasonably move that distance',
+                        type=int, default=0)
+    parser.add_argument('-msld', '--max-speed-limit-delay',
+                        help='Maximum time in seconds to delay when trying to stay under the speed limit',
+                        type=int, default=0)
     parser.add_argument('-el', '--encrypt-lib', help='Path to encrypt lib to be used instead of the shipped ones.')
     parser.add_argument('-odt', '--on-demand_timeout', help='Pause searching while web UI is inactive for this timeout(in seconds).', type=int, default=0)
     verbosity = parser.add_mutually_exclusive_group()

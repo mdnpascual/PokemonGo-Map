@@ -671,6 +671,7 @@ class WorkerStatus(BaseModel):
     fail = IntegerField()
     no_items = IntegerField()
     skip = IntegerField()
+    captchas = IntegerField()
     last_modified = DateTimeField(index=True)
     message = CharField(max_length=255)
 
